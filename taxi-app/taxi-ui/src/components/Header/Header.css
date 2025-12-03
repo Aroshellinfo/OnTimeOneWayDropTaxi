@@ -1,0 +1,144 @@
+header {
+  font-family: Arial, sans-serif;
+}
+.top-bar {
+  background-color: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+  font-size: 1px;
+}
+
+.top-bar .icon {
+  margin-right: 5px;
+  color: red;
+}
+
+.top-left, .top-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 100px;
+}
+
+.logo h1 {
+  margin: 0;
+  color: gold;
+}
+
+.logo p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 50px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.book-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.offers-bar {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.offers-title {
+  background-color: rgb(167, 8, 8);
+  color: #fff;
+  padding: 20px 10%; 
+  white-space: nowrap;
+  border-right: 2px solid #fff; 
+  display: flex;
+  align-items: center;
+}
+
+.offers-list {
+  background-color: black;
+  color: white;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 20px 0; 
+}
+
+.offers-list span {
+  display: inline-block;
+  padding: 0 50px;
+}
+
+.scroll-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 40s linear infinite; 
+}
+
+.offers-list:hover .scroll-text {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.css-nax7pd{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 3px 2px !important; 
+    background-color: #fff;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #eee;
+    -webkit-transition: padding 0.3s;
+    transition: padding 0.3s;
+}

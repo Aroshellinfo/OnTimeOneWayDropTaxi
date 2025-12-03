@@ -1,0 +1,40 @@
+.book-now-btn {
+  position: relative;
+  overflow: hidden;
+ 
+  color: black;
+}
+
+.book-now-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #126839;  
+  z-index: 1;
+  transition: width 0.42s cubic-bezier(.2,.9,.2,1);
+}
+
+.book-now-btn:hover::before {
+  width: 100%;
+}
+
+.book-now-btn .btn-text,
+.book-now-btn svg {
+  position: relative;
+  z-index: 2;
+}
+
+.book-now-btn:hover .btn-text,
+.book-now-btn:hover svg {
+  color: white !important;
+  stroke: white !important; 
+}
+.book-now-btn .btn-text {
+  transition: color 0.25s ease;
+}
+.book-now-btn svg {
+  transition: color 0.25s ease, stroke 0.25s ease;
+}

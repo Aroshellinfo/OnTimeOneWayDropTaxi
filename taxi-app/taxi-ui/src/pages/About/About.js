@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { ABOUT_US_STRINGS } from "../../constants/AboutUs_string";
 import car from "../../assets/images/cars/car17.png";
 
-
 const AboutUs = ({ scrollToBooking }) => {
   const navigate = useNavigate();
 
@@ -22,9 +21,9 @@ const AboutUs = ({ scrollToBooking }) => {
       sx={{
         width: "100%",
         minHeight: "90vh",
-        paddingTop: "0px !important",
-        paddingBottom: "0px !important",
-        p: 10.5,
+        pt: { xs: 8, sm: 10, md: 12 },
+        padding: { xs: 2, sm: 4 },
+        paddingBottom: { xs: 8, md: 12 },
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -37,14 +36,19 @@ const AboutUs = ({ scrollToBooking }) => {
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: { xs: "center", md: "flex-start" },
+          gap: { md: 4 },
         }}
       >
+        {/* Text Section */}
         <Box
           sx={{
             maxWidth: "600px",
             textAlign: "left",
-            ml: { md: 4 },
+            // Shift text more to the right on desktop
+            ml: { xs: 0, md: 24 }, // Increased margin-left from left
+            mb: { xs: 4, md: 0 },
+            mt: 4,
           }}
         >
           <Link
@@ -52,7 +56,7 @@ const AboutUs = ({ scrollToBooking }) => {
             underline="none"
             sx={{
               color: "#0e7e3fff",
-              fontSize: 20,
+              fontSize: { xs: 16, sm: 18, md: 20 },
               display: "inline-block",
               mb: 2,
             }}
@@ -60,7 +64,15 @@ const AboutUs = ({ scrollToBooking }) => {
             {ABOUT_US_STRINGS.SECTION_TITLE}
           </Link>
 
-          <Typography variant="h3" component="h1" gutterBottom>
+          <Typography
+            component="h1"
+            gutterBottom
+            sx={{
+              fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
+              lineHeight: 1.2,
+              fontWeight: 600,
+            }}
+          >
             {ABOUT_US_STRINGS.MAIN_HEADING}
           </Typography>
 
@@ -74,12 +86,18 @@ const AboutUs = ({ scrollToBooking }) => {
               lineHeight: 1.7,
             }}
           >
-            {ABOUT_US_STRINGS.BODY_TEXT}<br/>
-            {ABOUT_US_STRINGS.BODY_TEXT0}<br />
-            {ABOUT_US_STRINGS.BODY_TEXT1}<br />
-            {ABOUT_US_STRINGS.BODY_TEXT2}<br />
-            {ABOUT_US_STRINGS.BODY_TEXT3}<br />
-            {ABOUT_US_STRINGS.BODY_TEXT4}<br />
+            {ABOUT_US_STRINGS.BODY_TEXT}
+            <br />
+            {ABOUT_US_STRINGS.BODY_TEXT0}
+            <br />
+            {ABOUT_US_STRINGS.BODY_TEXT1}
+            <br />
+            {ABOUT_US_STRINGS.BODY_TEXT2}
+            <br />
+            {ABOUT_US_STRINGS.BODY_TEXT3}
+            <br />
+            {ABOUT_US_STRINGS.BODY_TEXT4}
+            <br />
           </Typography>
 
           <Button
@@ -91,7 +109,7 @@ const AboutUs = ({ scrollToBooking }) => {
               color: "white",
               boxShadow: "0 0 20px #eee",
               borderRadius: "10px",
-              padding: "15px 45px",
+              padding: { xs: "12px 30px", md: "15px 45px" },
               textTransform: "uppercase",
               transition: "0.5s",
               "&:hover": {
@@ -105,7 +123,7 @@ const AboutUs = ({ scrollToBooking }) => {
           </Button>
         </Box>
 
-        {/* Right Image */}
+        {/* Image Section */}
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <Box
             component="img"
@@ -113,7 +131,7 @@ const AboutUs = ({ scrollToBooking }) => {
             alt="carimg"
             sx={{
               maxWidth: "100%",
-              width: { xs: "90%", md: "600px" },
+              width: { xs: "100%", sm: "90%", md: "600px" },
               height: "auto",
               objectFit: "contain",
             }}

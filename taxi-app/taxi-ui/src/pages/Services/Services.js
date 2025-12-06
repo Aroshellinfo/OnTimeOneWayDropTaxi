@@ -8,7 +8,6 @@ import {
   Button,
   Box
 } from '@mui/material';
-
 import { SERVICES_DATA } from "../../constants/Services_string";
 import { SERVICES_STRINGS } from "../../constants/Services_string";
 
@@ -20,8 +19,6 @@ const Services = ({ scrollToBooking }) => {
 
   return (
     <Box sx={{ background: '#ddeedeff', padding: { xs: '0px 20px', md: '90px' } }}>
-      
-      {/* Section Header */}
       <Box sx={{ textAlign: 'center', mb: 6 }}>
         <Typography
           variant="subtitle1"
@@ -98,6 +95,8 @@ const Services = ({ scrollToBooking }) => {
                   </Typography>
                 </Box>
 
+
+
                 <Box sx={{ display: "flex", justifyContent: "center", mt: 2, mb: 2 }}>
                   <Button
                     onClick={handleBookNowClick}
@@ -121,6 +120,10 @@ const Services = ({ scrollToBooking }) => {
                     {SERVICES_STRINGS.BUTTON_TEXT}
                   </Button>
                 </Box>
+
+
+
+                
               </CardContent>
             </Card>
           </Grid>

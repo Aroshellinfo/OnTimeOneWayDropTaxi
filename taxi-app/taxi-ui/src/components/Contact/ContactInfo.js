@@ -12,8 +12,6 @@ function ContactInfo() {
   return (
     <Box sx={{ p: 4, backgroundColor: "#fff5f5" }}>
 
-      {/* TOP HERO SECTION */}
-
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>
           <Typography variant="h6" fontWeight="bold" gutterBottom>
@@ -61,15 +59,12 @@ function ContactInfo() {
           />
         </Grid>
       </Grid>
-
-      {/* CONTACT CARDS */}
-
       <Grid
         container
         spacing={4}
         sx={{
           mt: 5,
-          alignItems: "stretch" // Ensures equal card heights
+          alignItems: "stretch" 
         }}
       >
         {/* CARD 1 */}

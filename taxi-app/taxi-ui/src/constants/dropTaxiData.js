@@ -8,7 +8,6 @@ export const DROP_TAXI_CONTENT = {
     "Includes a many type of vehicle models."
   ]
 };
-
 export const DROP_TAXI_BOX_ITEMS = [
   { id: "01.", label: "24/7 Support", key: "booking" },
   { id: "02.", label: "Best Price", key: "tariff" },

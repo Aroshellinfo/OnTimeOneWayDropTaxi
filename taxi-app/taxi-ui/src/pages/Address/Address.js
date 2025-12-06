@@ -19,7 +19,6 @@ function Address() {
 
   return (
     <>
-      {/* Hot Offers Section */}
       <Box sx={{ display: "flex", alignItems: "center", fontWeight: "bold" }}>
         <Box
           sx={{
@@ -46,11 +45,8 @@ function Address() {
           <marquee>{offers.join("   ✦   ")}</marquee>
         </Box>
       </Box>
-
-      {/* Main Section */}
       <Box sx={{ backgroundColor: "#fff5f5", p: "40px 20px" }}>
         <Grid container spacing={4} alignItems="center">
-          {/* Left side text */}
           <Grid item xs={12} md={6}>
             <Typography
               sx={{
@@ -109,8 +105,6 @@ function Address() {
               </Button>
             </Box>
           </Grid>
-
-          {/* Right side image */}
           <Grid item xs={12} md={6} display="flex" justifyContent="flex-end">
             <img
               src={heroImage}

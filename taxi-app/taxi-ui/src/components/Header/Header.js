@@ -121,15 +121,22 @@ function Header({ scrollToBooking }) {
           padding: "0px 0px !important",
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center", transition: "0.3s" }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            transition: "0.3s",
+            justifyContent: isMobile ? "flex-start" : "flex-start",
+            paddingLeft: isMobile ? "45px" : scrolled ? "220px" : "200px",
+          }}
+        >
           <img
             src={carLogo}
             alt="Logo"
             style={{
-              height: 80,
+              height: isMobile ? 73 : 76,
               objectFit: "contain",
               transition: "height 0.3s",
-              paddingLeft: scrolled ? "220px" : "200px",
             }}
           />
         </Box>
@@ -234,9 +241,35 @@ function Header({ scrollToBooking }) {
         onClose={() => setDrawerOpen(false)}
       >
         <Box sx={{ width: 250, p: 2 }}>
-          <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
-            Menu
-          </Typography>
+          {/* Menu header with Cancel icon */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              mb: 2,
+            }}
+          >
+            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+              Menu
+            </Typography>
+            <IconButton onClick={() => setDrawerOpen(false)} size="small">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </IconButton>
+          </Box>
 
           <List>
             {navItems.map((item) => (
@@ -249,7 +282,12 @@ function Header({ scrollToBooking }) {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                <ListItemText primary={item.label} />
+                <ListItemText
+                  primary={item.label}
+                  primaryTypographyProps={{
+                    style: { color: "#333", fontWeight: "bold" },
+                  }}
+                />
               </ListItem>
             ))}
 
@@ -260,7 +298,13 @@ function Header({ scrollToBooking }) {
                 navigate("/book");
               }}
             >
-              <ListItemText primary="Book Now" />
+              {/* Keep Book Now button color different */}
+              <ListItemText
+                primary="Book Now"
+                primaryTypographyProps={{
+                  style: { color: "#126839", fontWeight: "bold" },
+                }}
+              />
             </ListItem>
           </List>
         </Box>

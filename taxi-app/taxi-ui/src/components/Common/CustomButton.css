@@ -17,7 +17,6 @@
   border-radius: var(--border-radius);
   box-sizing: border-box;
 }
-
 .book-now-button::after {
   --m-i: linear-gradient(#000, #000);
   --m-o: content-box, padding-box;
@@ -52,15 +51,12 @@
   z-index: -1;
   box-sizing: border-box;
 }
-
 .book-now-button:hover::after {
   animation-play-state: running;
 }
-
 .book-now-button:active {
   --border-width: 5px;
 }
-
 @keyframes rotate-hue {
   to {
     filter: hue-rotate(1turn);

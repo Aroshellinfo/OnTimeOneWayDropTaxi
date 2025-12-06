@@ -1,6 +1,6 @@
 /* src/components/Common/BottomNavBar.jsx */
 import React, { useState, useEffect } from "react";
-import { Box, IconButton, Button } from "@mui/material";
+import { Box, IconButton, Button, useMediaQuery } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -15,6 +15,9 @@ const BottomNavBar = ({
   const [open, setOpen] = useState(false);
   const [showOnScroll, setShowOnScroll] = useState(false);
   const [permanentlyClosed, setPermanentlyClosed] = useState(false);
+
+  // Detect mobile screen
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const runSafe = (fn) => {
     if (typeof fn === "function") {
@@ -32,7 +35,7 @@ const BottomNavBar = ({
     { label: "Tariff", action: scrollContact },
     { label: "Routes", action: scrollRoutes },
   ];
-  
+
   useEffect(() => {
     const handleScroll = () => {
       if (permanentlyClosed) return;
@@ -49,6 +52,9 @@ const BottomNavBar = ({
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [permanentlyClosed]);
+
+  // ❌ Correct place to hide on mobile (after hooks)
+  if (isMobile) return null;
 
   if (!showOnScroll || permanentlyClosed) return null;
 
@@ -94,7 +100,7 @@ const BottomNavBar = ({
               key={index}
               onClick={() => {
                 setOpen(false);
-                runSafe(item.action); // SAFE CALL
+                runSafe(item.action);
               }}
               sx={{
                 textTransform: "none",

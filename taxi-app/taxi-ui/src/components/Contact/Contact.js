@@ -3,7 +3,6 @@ import { Box, Typography, Button, Link as MUILink } from '@mui/material';
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { Facebook, Instagram, Twitter } from '@mui/icons-material';
 
-// Assuming this path is correct in your project structure
 import carLogo from "../../assets/images/logo/logo4.png"; 
 
 const Contact = () => {
@@ -11,7 +10,6 @@ const Contact = () => {
     const location = useLocation();
     const current = location.pathname;
 
-    // Defines the style for active navigation links
     const activeStyle = (path) => ({
         color: current === path ? "lightgreen" : "#ccc",
         fontWeight: current === path ? "bold" : "normal",
@@ -19,8 +17,6 @@ const Contact = () => {
 
     return (
         <>
-            {/* Contact Section  */}
-
             <Box
                 sx={{
                     backgroundColor: '#111',
@@ -82,9 +78,6 @@ const Contact = () => {
 
                 </Box>
             </Box>
-
-            {/* Footer Section */}
-
             <Box sx={{ backgroundColor: '#E6F6F0', color: 'black', paddingBottom: '0.1px' }}>
                 <Box
                     sx={{
@@ -95,25 +88,18 @@ const Contact = () => {
                         justifyContent: 'space-between',
                     }}
                 >
-                    {/* Logo */}
-
                     <Box sx={{ display: "flex", p: "7px 30px", paddingRight: "60px" }}>
-                        <img src={carLogo} alt="Aro Logo" style={{ height: 270 }} />
+                        <img src={carLogo} alt="Aro Logo" style={{ height: 270 , marginLeft:"13%" }} />
                     </Box>
-
-                    {/* Get In Touch */}
-
                     <Box sx={{ flex: '1 1 200px', mb: 3, p: "30px" }}>
                         <Typography variant="h6" sx={{ borderBottom: '3px solid yellow', pb: 1, display: 'inline-block' }}>
                             Get In Touch
                         </Typography>
-
                         <Typography variant="body2" sx={{ mt: 1 ,fontSize: "16px"  }}>
                             <strong>Location</strong><br />
                             No.18, 1st floor, 2nd block, 3rd Street, Logos church road,
                             Prakruthi township, Babusapalya, Bangalore 560043
                         </Typography>
-
                         <Typography variant="body2" sx={{ mt: 2 ,fontSize: "16px"}}>
                             <strong>Contact</strong><br />
                             Phone: <MUILink href="tel:+919663150767" sx={{ color: 'black' }}>+919663150767</MUILink><br />
@@ -121,19 +107,13 @@ const Contact = () => {
                                 ontimeonewaydroptaxi@gmail.com
                             </MUILink>
                         </Typography>
-
-                        {/* Social Icons - FIXED: Wrapped icons in MUILink for navigation */}
-
                         <Box sx={{ display: "flex", gap: 2, mt: 5 }}>
-                            {/* Facebook */}
-                            <MUILink href="https://www.facebook.com/YOUR_FACEBOOK_URL" target="_blank" rel="noopener">
+                            <MUILink href="https://www.facebook.com/share/1Bj7oxUEiH/?mibextid=wwXIfr" target="_blank" rel="noopener">
                                 <Facebook sx={{ fontSize: 28, color:"blue"}} />
                             </MUILink>
-                            {/* Twitter */}
                             <MUILink href="https://twitter.com/YOUR_TWITTER_HANDLE" target="_blank" rel="noopener">
                                 <Twitter sx={{ fontSize: 28, color:"blue"}} />
                             </MUILink>
-                            {/* Instagram (Used existing URL) */}
                             <MUILink 
                                 href="https://www.instagram.com/ontimeonewaydroptaxi?igsh=cWp4NWxhNTE3b3Vr&utm_source=qr" 
                                 target="_blank" 
@@ -143,9 +123,6 @@ const Contact = () => {
                             </MUILink>
                         </Box>
                     </Box>
-
-                    {/* Company Navigation Links */}
-                    
                     <Box sx={{ flex: '1 1 200px', mb: 3, paddingTop: 5, paddingLeft: 5 }}>
                         <Typography variant="h6" sx={{ borderBottom: '3px solid yellow', pb: 1, display: 'inline-block' }}>
                             Company
@@ -166,7 +143,6 @@ const Contact = () => {
                             >
                                 Home
                             </MUILink>
-
                             <MUILink
                                 component={RouterLink}
                                 to="/tariff"
@@ -181,7 +157,6 @@ const Contact = () => {
                             >
                                 Tariff
                             </MUILink>
-
                             <MUILink
                                 component={RouterLink}
                                 to="/ContactInfoPage"

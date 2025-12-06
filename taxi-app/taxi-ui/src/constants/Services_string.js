@@ -3,7 +3,6 @@ import img from "../assets/images/Common/img.jpg";
 import img1 from "../assets/images/Common/img1.jpg";
 import img2 from "../assets/images/Common/img2.jpg";
 
-
 export const SERVICES_STRINGS = {
   SECTION_TITLE: "Services",
   MAIN_TITLE: "What Services we offer to our clients",

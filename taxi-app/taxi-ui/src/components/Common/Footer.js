@@ -22,7 +22,7 @@ function Footer() {
           underline="hover"
           sx={{ fontWeight: "bold", color: "black" }}
         >
-          Aroshell
+          Aroshell infotech pvt
         </Link>.
       </Typography>
     </Box>

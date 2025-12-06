@@ -12,11 +12,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-/* Center all website content */
 .container-center {
-  max-width: 1200px;   /* You can change width: 1100, 1000, etc. */
-  margin: 0 auto;      /* This centers the content */
-  padding: 0 20px;     /* Small left–right space inside */
+  max-width: 1200px;   
+  margin: 0 auto;      
+  padding: 0 20px;     
   box-sizing: border-box;
 }
 
+/* body {
+  overflow-x: hidden !important;
+ 
+}
+
+#root {
+  overflow-x: hidden !important;
+} */

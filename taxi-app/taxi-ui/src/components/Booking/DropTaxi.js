@@ -25,21 +25,23 @@ const DropTaxi = ({ scrollToBooking, scrollToTariff, scrollToRoutes }) => {
   const scrollMap = {
     booking: scrollToBooking,
     tariff: scrollToTariff,
-    routes: scrollToRoutes
+    routes: scrollToRoutes,
   };
 
   return (
     <Box
       sx={{
         position: 'relative',
-        height: '100vh',
+        height: { xs: "auto", md: "100vh" },
+        py: { xs: 6, md: 0 },
         color: 'white',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: { xs: "center", md: "flex-end" },
         overflow: 'hidden',
       }}
     >
+      {/* Background Image */}
       <Box
         component="img"
         src={carimage1}
@@ -54,6 +56,7 @@ const DropTaxi = ({ scrollToBooking, scrollToTariff, scrollToRoutes }) => {
           zIndex: 0,
         }}
       />
+
       <Box
         sx={{
           position: 'absolute',
@@ -66,22 +69,30 @@ const DropTaxi = ({ scrollToBooking, scrollToTariff, scrollToRoutes }) => {
       <Container sx={{ position: 'relative', zIndex: 2 }}>
         <Box
           sx={{
-            width: "60%",
+            width: { xs: "100%", sm: "85%", md: "60%" },
             ml: "auto",
-            textAlign: "right",
-            pr: "120px",
+            textAlign: { xs: "center", md: "right" },
+            pr: { xs: 0, md: "120px" },
           }}
         >
           <Typography
             variant="h3"
-            sx={{ fontSize: '32px', fontWeight: 'bold', mb: 3 }}
+            sx={{
+              fontSize: { xs: "26px", sm: "30px", md: "32px" },
+              fontWeight: 'bold',
+              mb: 3,
+            }}
           >
             {DROP_TAXI_CONTENT.title}
           </Typography>
 
           <Typography
             variant="body1"
-            sx={{ fontSize: '16px', lineHeight: 1.8, mb: 4 }}
+            sx={{
+              fontSize: { xs: "14px", sm: "15px", md: "16px" },
+              lineHeight: 1.8,
+              mb: 4,
+            }}
           >
             {DROP_TAXI_CONTENT.description.map((line, i) => (
               <span key={i}>
@@ -96,10 +107,10 @@ const DropTaxi = ({ scrollToBooking, scrollToTariff, scrollToRoutes }) => {
             sx={{
               backgroundColor: '#126839',
               fontWeight: 'bold',
-              px: 4,
+              px: { xs: 3, md: 4 },
               py: 1.5,
               borderRadius: 1,
-              mb: 8,
+              mb: { xs: 4, md: 8 },
               '&:hover': {
                 backgroundColor: '#ffcb05',
                 color: 'black',
@@ -110,9 +121,15 @@ const DropTaxi = ({ scrollToBooking, scrollToTariff, scrollToRoutes }) => {
           </Button>
         </Box>
 
-        <Grid container spacing={4} justifyContent="center" sx={{ mt: 2 }}>
+        {/* Boxes - Responsive */}
+        <Grid
+          container
+          spacing={3}
+          justifyContent="center"
+          sx={{ mt: { xs: 2, md: 4 } }}
+        >
           {DROP_TAXI_BOX_ITEMS.map((item) => (
-            <Grid item key={item.id}>
+            <Grid item xs={12} sm={6} md="auto" key={item.id}>
               <Box
                 onClick={() => safeRun(scrollMap[item.key])}
                 sx={boxStyle}
@@ -131,13 +148,13 @@ const boxStyle = {
   backgroundColor: "rgba(255,255,255,0.1)",
   padding: "20px 40px",
   borderRadius: "20px 0 20px 0",
-  fontSize: "22px",
+  fontSize: { xs: "18px", sm: "20px", md: "22px" },
   fontWeight: "bold",
   color: "white",
   cursor: "pointer",
   transition: "0.3s",
   textAlign: "center",
-  minWidth: "200px",
+  minWidth: { xs: "100%", sm: "200px" },
   "&:hover": {
     backgroundColor: "#126839",
     transform: "translateY(-8px)",

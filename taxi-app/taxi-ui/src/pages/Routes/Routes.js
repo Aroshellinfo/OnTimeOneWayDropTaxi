@@ -56,14 +56,14 @@ const Routes = ({ scrollToBooking }) => {
         </Box>
       </Box>
 
-      {/* Image Grid */}
+      {/* Cards Container */}
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Box
           sx={{
             width: "70%",
             display: "grid",
             gridTemplateColumns: {
-              xs: "1fr",
+              xs: "1fr", // mobile: single column, wider automatically
               sm: "repeat(2, 1fr)",
               md: "repeat(3, 1fr)",
             },
@@ -79,7 +79,10 @@ const Routes = ({ scrollToBooking }) => {
                 position: "relative",
                 borderRadius: 2,
                 overflow: "hidden",
-                height: 300,
+                height: {
+                  xs: "260px", // increased height for mobile
+                  sm: "300px", // keep original for desktop
+                },
                 boxShadow: 4,
                 cursor: "pointer",
                 "&:hover .overlay": {
@@ -132,6 +135,7 @@ const Routes = ({ scrollToBooking }) => {
                 </Button>
               </Box>
 
+              {/* Card Text */}
               <CardContent
                 sx={{
                   position: "absolute",

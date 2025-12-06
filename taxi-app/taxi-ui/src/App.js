@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import Header from "./components/Header/Header";
 import HeroSection from "./components/HeroSection/HeroSection";
 import CarTaxiBooking from "./components/Booking/CarTaxiBooking";
@@ -11,7 +10,6 @@ import TaxiList from "./components/Taxicard/TaxiList";
 import RoutesPage from "./pages/Routes/Routes";
 import Contact from "./components/Contact/Contact";
 import Contacts from "./components/Contact/Contacts";
-
 import BottomNavBar from "./components/Common/BottomNavBar";
 import FloatingButtons from "./components/Common/FloatingButtons";
 import Footer from "./components/Common/Footer";
@@ -39,7 +37,6 @@ function App() {
     window.location.href = "/";
   };
 
-  
   const HomePage = () => (
     <>
       <div ref={topRef} />
@@ -67,7 +64,7 @@ function App() {
       </div>
 
       <div ref={taxiListRef}>
-        <TaxiList scrollToBooking={() => scrollToSection(bookingRef)}/>
+        <TaxiList scrollToBooking={() => scrollToSection(bookingRef)} />
       </div>
 
       <div ref={routesRef}>
@@ -80,7 +77,7 @@ function App() {
 
   const Tariff = () => (
     <>
-      <TaxiList scrollToBooking={() => scrollToSection(bookingRef)}/>
+      <TaxiList scrollToBooking={null} />
       <Contact />
     </>
   );
@@ -91,13 +88,18 @@ function App() {
       <Contact />
     </>
   );
+  const FullBookingPage = () => {
+    React.useEffect(() => {
+      window.scrollTo(0, 0); 
+    }, []);
 
-  const FullBookingPage = () => (
-    <>
-      <CarTaxiBooking />
-      <Contact />
-    </>
-  );
+    return (
+      <>
+        <CarTaxiBooking />
+        <Contact />
+      </>
+    );
+  };
 
   return (
     <Router>
@@ -123,6 +125,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+
         <Route
           path="/droptaxi"
           element={
@@ -133,14 +136,15 @@ function App() {
             />
           }
         />
+
         <Route path="/tariff" element={<Tariff />} />
         <Route path="/routes" element={<RoutesPage />} />
         <Route path="/contact" element={<Contacts />} />
         <Route path="/ContactInfoPage" element={<ContactInfoPage />} />
         <Route path="/book" element={<FullBookingPage />} />
       </Routes>
-      <Footer />
 
+      <Footer />
       <FloatingButtons />
     </Router>
   );

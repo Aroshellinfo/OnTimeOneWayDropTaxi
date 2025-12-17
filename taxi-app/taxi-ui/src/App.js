@@ -20,7 +20,6 @@ function App() {
   const servicesRef = useRef(null);
   const whyRef = useRef(null);
   const routesRef = useRef(null);
-
   const taxiListRef = useRef(null);
   const bookingRef = useRef(null);
 
@@ -32,11 +31,9 @@ function App() {
       });
     }
   };
-
   const refreshHome = () => {
     window.location.href = "/";
   };
-
   const HomePage = () => (
     <>
       <div ref={topRef} />
@@ -100,7 +97,6 @@ function App() {
       </>
     );
   };
-
   return (
     <Router>
       <Header
@@ -111,7 +107,6 @@ function App() {
         scrollRoutes={() => scrollToSection(routesRef)}
         scrollContact={() => scrollToSection(taxiListRef)}
       />
-
       <BottomNavBar
         scrollTop={refreshHome}
         scrollAbout={() => scrollToSection(aboutRef)}
@@ -120,12 +115,10 @@ function App() {
         scrollRoutes={() => scrollToSection(routesRef)}
         scrollContact={() => scrollToSection(taxiListRef)}
       />
-
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-
         <Route
           path="/droptaxi"
           element={
@@ -136,14 +129,12 @@ function App() {
             />
           }
         />
-
         <Route path="/tariff" element={<Tariff />} />
         <Route path="/routes" element={<RoutesPage />} />
         <Route path="/contact" element={<Contacts />} />
         <Route path="/ContactInfoPage" element={<ContactInfoPage />} />
         <Route path="/book" element={<FullBookingPage />} />
       </Routes>
-
       <Footer />
       <FloatingButtons />
     </Router>

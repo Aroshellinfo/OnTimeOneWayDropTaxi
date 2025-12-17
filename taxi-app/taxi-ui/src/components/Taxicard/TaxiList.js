@@ -1,10 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import taxiData from "../../constants/taxiData";
-
 export default function TaxiList({ scrollToBooking }) {
   const navigate = useNavigate();
-
   const handleBookNowClick = () => {
     if (typeof scrollToBooking === "function") {
       scrollToBooking();
@@ -53,15 +51,17 @@ export default function TaxiList({ scrollToBooking }) {
         .imageBox{
           position: relative;
           width: 100%;
-          height: 200px;
+          height: 170px;
           overflow: hidden;
+          background: white;
         }
 
         .carImage{
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
           display: block;
+          padding: 10px;
         }
 
         .popularTag{
@@ -160,9 +160,6 @@ export default function TaxiList({ scrollToBooking }) {
           background-color: #f7f7f7;
         }
 
-        /* ---------------------- Responsive Styles ---------------------- */
-
-        /* Tablets (max-width 1024px) */
         @media (max-width: 1024px) {
           .tariffCard{
             width: 45%;
@@ -170,9 +167,11 @@ export default function TaxiList({ scrollToBooking }) {
           .carTitle{
             font-size: 20px;
           }
+          .imageBox{
+            height: 160px;
+          }
         }
 
-        /* Mobile (max-width 768px) */
         @media (max-width: 768px) {
           .tariffCard{
             width: 90%;
@@ -181,7 +180,7 @@ export default function TaxiList({ scrollToBooking }) {
             gap: 15px;
           }
           .imageBox{
-            height: 180px;
+            height: 150px;
           }
           .carTitle{
             font-size: 20px;
@@ -200,13 +199,15 @@ export default function TaxiList({ scrollToBooking }) {
           }
         }
 
-        /* Small Mobile (max-width 480px) */
         @media (max-width: 480px) {
           .tariffCard{
             width: 100%;
           }
           .carTitle{
             font-size: 18px;
+          }
+          .imageBox{
+            height: 150px;
           }
           .priceBadge{
             font-size: 16px;

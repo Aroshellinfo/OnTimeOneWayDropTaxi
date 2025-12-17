@@ -41,7 +41,6 @@ const DropTaxi = ({ scrollToBooking, scrollToTariff, scrollToRoutes }) => {
         overflow: 'hidden',
       }}
     >
-      {/* Background Image */}
       <Box
         component="img"
         src={carimage1}
@@ -56,7 +55,6 @@ const DropTaxi = ({ scrollToBooking, scrollToTariff, scrollToRoutes }) => {
           zIndex: 0,
         }}
       />
-
       <Box
         sx={{
           position: 'absolute',
@@ -65,7 +63,6 @@ const DropTaxi = ({ scrollToBooking, scrollToTariff, scrollToRoutes }) => {
           zIndex: 1,
         }}
       />
-
       <Container sx={{ position: 'relative', zIndex: 2 }}>
         <Box
           sx={{
@@ -85,7 +82,6 @@ const DropTaxi = ({ scrollToBooking, scrollToTariff, scrollToRoutes }) => {
           >
             {DROP_TAXI_CONTENT.title}
           </Typography>
-
           <Typography
             variant="body1"
             sx={{
@@ -100,7 +96,6 @@ const DropTaxi = ({ scrollToBooking, scrollToTariff, scrollToRoutes }) => {
               </span>
             ))}
           </Typography>
-
           <Button
             variant="contained"
             onClick={handleBookNowClick}
@@ -120,8 +115,6 @@ const DropTaxi = ({ scrollToBooking, scrollToTariff, scrollToRoutes }) => {
             Book Now
           </Button>
         </Box>
-
-        {/* Boxes - Responsive */}
         <Grid
           container
           spacing={3}

@@ -71,7 +71,8 @@ function Header({ scrollToBooking }) {
         sx={{
           backgroundColor: "#126839",
           color: "white",
-          p: scrolled ? "2px 20px" : "2px 20px",
+          // Use responsive padding for the top bar
+          p: { xs: "2px 10px", md: scrolled ? "2px 20px" : "2px 20px" },
           transition: "padding 0.3s",
         }}
       >
@@ -82,7 +83,8 @@ function Header({ scrollToBooking }) {
               display="flex"
               alignItems="center"
               gap={1}
-              paddingLeft={35}
+              // Removed fixed paddingLeft for mobile responsiveness, only apply for MD and up
+              sx={{ paddingLeft: { xs: 0, md: 35 } }}
             >
               <FaEnvelope style={{ color: "#FFF700" }} />
               <Typography variant="body2">
@@ -96,8 +98,13 @@ function Header({ scrollToBooking }) {
             display="flex"
             alignItems="center"
             gap={1}
-            paddingRight={isMobile ? 0 : 30}
-            sx={{ margin: isMobile ? "0 auto" : "0" }}
+            // Removed fixed paddingRight for mobile responsiveness, only apply for MD and up
+            sx={{
+              paddingRight: { xs: 1, md: 30 },
+              margin: isMobile ? "0 auto" : "0",
+              justifyContent: isMobile ? "center" : "flex-end", // Center phone number on mobile
+              width: isMobile ? "100%" : "auto", // Take full width on mobile
+            }}
           >
             <FaPhoneAlt style={{ color: "#FFF700" }} />
             <Typography variant="body2">Phone: +91 9663150767</Typography>
@@ -110,7 +117,8 @@ function Header({ scrollToBooking }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: scrolled ? "20px 10px" : "20px 10px",
+          // Use responsive padding for the main nav bar
+          padding: { xs: "0 10px", md: scrolled ? "20px 10px" : "20px 10px" },
           backgroundColor: "#fff",
           position: "sticky",
           top: 0,
@@ -118,7 +126,6 @@ function Header({ scrollToBooking }) {
           height: "63px",
           borderBottom: "1px solid #eee",
           transition: "padding 0.3s",
-          padding: "0px 0px !important",
         }}
       >
         <Box
@@ -127,7 +134,8 @@ function Header({ scrollToBooking }) {
             alignItems: "center",
             transition: "0.3s",
             justifyContent: isMobile ? "flex-start" : "flex-start",
-            paddingLeft: isMobile ? "45px" : scrolled ? "220px" : "200px",
+            // Use responsive paddingLeft for the logo container
+            paddingLeft: { xs: "10px", md: scrolled ? "220px" : "200px" },
           }}
         >
           <img
@@ -182,7 +190,8 @@ function Header({ scrollToBooking }) {
               alignItems: "center",
               justifyContent: "flex-end",
               flex: 1,
-              paddingRight: "200px",
+              // Removed fixed paddingRight for mobile responsiveness, only apply for MD and up
+              paddingRight: { xs: 0, md: "200px" },
               opacity: scrolled ? 0 : 1,
               transition: "0.3s",
             }}
@@ -229,7 +238,7 @@ function Header({ scrollToBooking }) {
             </Box>
           </Box>
         ) : (
-          <IconButton onClick={() => setDrawerOpen(true)}>
+          <IconButton onClick={() => setDrawerOpen(true)} sx={{ marginRight: 1 }}>
             <MenuIcon sx={{ fontSize: 32 }} />
           </IconButton>
         )}
@@ -241,7 +250,6 @@ function Header({ scrollToBooking }) {
         onClose={() => setDrawerOpen(false)}
       >
         <Box sx={{ width: 250, p: 2 }}>
-          {/* Menu header with Cancel icon */}
           <Box
             sx={{
               display: "flex",
@@ -298,7 +306,6 @@ function Header({ scrollToBooking }) {
                 navigate("/book");
               }}
             >
-              {/* Keep Book Now button color different */}
               <ListItemText
                 primary="Book Now"
                 primaryTypographyProps={{
@@ -309,7 +316,6 @@ function Header({ scrollToBooking }) {
           </List>
         </Box>
       </Drawer>
-
       {progress > 0 && (
         <Box
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

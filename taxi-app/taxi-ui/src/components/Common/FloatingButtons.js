@@ -1,70 +1,57 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { IconButton } from "@mui/material";
 import CallIcon from "@mui/icons-material/Call";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 export default function FloatingButtons() {
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimate(true);
-      setTimeout(() => setAnimate(false), 700);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <>
-      <style>{`
-        @keyframes zoomShake {
-          0% { transform: scale(1); }
-          20% { transform: scale(1.2); }
-          40% { transform: scale(1.2) rotate(-2deg); }
-          60% { transform: scale(1.2) rotate(2deg); }
-          80% { transform: scale(1.2) rotate(-2deg); }
-          100% { transform: scale(1); }
-        }
-      `}</style>
-
-      {/* WhatsApp Button */}
+      {/* WhatsApp Button - Bottom Left */}
       <IconButton
-        onClick={() => window.open("https://wa.me/919663150767", "_blank")}
+        onClick={() =>
+          window.open(
+            "https://wa.me/919663150767?text=Hi%20I%20need%20a%20cab%20booking",
+            "_blank"
+          )
+        }
         sx={{
           position: "fixed",
-          bottom: { xs: 15, sm: 20 },       // mobile responsive
-          left: { xs: 15, sm: 20 },         // mobile responsive
+          // Positioning: 10px from edge for mobile, 20px for desktop
+          bottom: { xs: 10, sm: 20 },
+          left: { xs: 10, sm: 20 },
           background: "#25D366",
           color: "white",
-          width: { xs: 48, sm: 55 },        // mobile size
-          height: { xs: 48, sm: 55 },       // mobile size
+          // Size: 50px for mobile, 55px for desktop
+          width: { xs: 50, sm: 55 },
+          height: { xs: 50, sm: 55 },
           zIndex: 3000,
           boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-          animation: animate ? "zoomShake 0.7s ease-in-out" : "none",
-          "&:hover": { background: "#1EBE5B" }
+          "&:hover": { background: "#1EBE5B" },
         }}
       >
+        {/* Icon size should also shrink slightly */}
         <WhatsAppIcon sx={{ fontSize: { xs: 26, sm: 30 } }} />
       </IconButton>
 
-      {/* Call Button */}
+      {/* Call Button - Bottom Right */}
       <IconButton
         onClick={() => (window.location.href = "tel:+919663150767")}
         sx={{
           position: "fixed",
-          bottom: { xs: 15, sm: 20 },       // mobile responsive
-          right: { xs: 15, sm: 20 },        // mobile responsive
+          // Positioning: 10px from edge for mobile, 20px for desktop
+          bottom: { xs: 10, sm: 20 },
+          right: { xs: 10, sm: 20 },
           background: "#007bff",
           color: "white",
-          width: { xs: 48, sm: 55 },        // mobile
-          height: { xs: 48, sm: 55 },       // mobile
+          // Size: 50px for mobile, 55px for desktop
+          width: { xs: 50, sm: 55 },
+          height: { xs: 50, sm: 55 },
           zIndex: 3000,
           boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-          animation: animate ? "zoomShake 0.7s ease-in-out" : "none",
-          "&:hover": { background: "#0057d1" }
+          "&:hover": { background: "#0057d1" },
         }}
       >
+        {/* Icon size should also shrink slightly */}
         <CallIcon sx={{ fontSize: { xs: 26, sm: 30 } }} />
       </IconButton>
     </>

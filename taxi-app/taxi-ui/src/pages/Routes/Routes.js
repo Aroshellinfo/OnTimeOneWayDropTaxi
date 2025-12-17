@@ -16,7 +16,6 @@ const Routes = ({ scrollToBooking }) => {
 
   return (
     <Box sx={{ padding: 4 }}>
-      {/* Header Section */}
       <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
         <Box
           sx={{
@@ -45,7 +44,6 @@ const Routes = ({ scrollToBooking }) => {
               Major Routes
             </Typography>
           </Box>
-
           <Typography
             variant="subtitle1"
             color="text.secondary"
@@ -55,15 +53,13 @@ const Routes = ({ scrollToBooking }) => {
           </Typography>
         </Box>
       </Box>
-
-      {/* Cards Container */}
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Box
           sx={{
             width: "70%",
             display: "grid",
             gridTemplateColumns: {
-              xs: "1fr", // mobile: single column, wider automatically
+              xs: "1fr", 
               sm: "repeat(2, 1fr)",
               md: "repeat(3, 1fr)",
             },
@@ -80,8 +76,8 @@ const Routes = ({ scrollToBooking }) => {
                 borderRadius: 2,
                 overflow: "hidden",
                 height: {
-                  xs: "260px", // increased height for mobile
-                  sm: "300px", // keep original for desktop
+                  xs: "260px", 
+                  sm: "300px", 
                 },
                 boxShadow: 4,
                 cursor: "pointer",
@@ -101,8 +97,6 @@ const Routes = ({ scrollToBooking }) => {
                   filter: "brightness(0.7)",
                 }}
               />
-
-              {/* Overlay */}
               <Box
                 className="overlay"
                 sx={{
@@ -134,8 +128,6 @@ const Routes = ({ scrollToBooking }) => {
                   Book Now
                 </Button>
               </Box>
-
-              {/* Card Text */}
               <CardContent
                 sx={{
                   position: "absolute",

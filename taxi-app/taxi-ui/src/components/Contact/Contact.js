@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Typography, Button, Link as MUILink } from '@mui/material';
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { Facebook, Instagram, Twitter } from '@mui/icons-material';
-
 import carLogo from "../../assets/images/logo/logo4.png"; 
 
 const Contact = () => {
@@ -11,35 +10,43 @@ const Contact = () => {
     const current = location.pathname;
 
     const activeStyle = (path) => ({
-        color: current === path ? "lightgreen" : "#ccc",
+        color: current === path ? "#126839" : "black", 
         fontWeight: current === path ? "bold" : "normal",
+        transition: 'color 0.2s',
+        '&:hover': {
+            color: '#f5c826',
+        }
     });
 
     return (
         <>
+            {/* ------------------- Contact/Call to Action Section (The black box) ------------------- */}
             <Box
                 sx={{
                     backgroundColor: '#111',
                     color: 'white',
                     textAlign: 'center',
                     py: 6,
-                    px: 4,
+                    px: { xs: 2, md: 4 }, 
                     borderTop: '15px solid #f5c826',
                     borderBottom: '30px solid #f5c826',
+                    overflowX: 'hidden', 
                 }}
             >
                 <Typography variant="h4" sx={{ color: 'green', mb: 1 }}>
                     Need Some Help?
                 </Typography>
-
-                <Typography variant="h3" fontWeight="bold" gutterBottom>
+                <Typography 
+                    variant="h3" 
+                    fontWeight="bold" 
+                    gutterBottom
+                    sx={{ fontSize: { xs: '2rem', sm: '3rem' } }} 
+                >
                     Ready to Start Your Travel?
                 </Typography>
-
                 <Typography variant="body1" sx={{ maxWidth: 600, mx: 'auto', mb: 4 }}>
                     Whether you're stuck or just want some tips on where to start, hit up our experts anytime.
                 </Typography>
-
                 <Box>
                     <Button
                         variant="contained"
@@ -62,52 +69,119 @@ const Contact = () => {
                     </Button>
 
                     <Typography variant="body2">Contact Us Soon</Typography>
-
                     
-                    <Typography variant="body2">
-                    <MUILink href="mailto:ontimeonewaydroptaxi@gmail.com" sx={{ color: '#40b4ff', mr: 1 }}>
-                        ontimeonewaydroptaxi@gmail.com
-                    </MUILink>
-
-                    &nbsp; &amp; &nbsp;
-
-                    <MUILink href="tel:+919663150767" sx={{ color: '#40b4ff', ml: 1 }}>
-                        +919663150767
-                    </MUILink>
-                    </Typography>
+                    <Box 
+                        sx={{ 
+                            display: 'flex', 
+                            flexDirection: { xs: 'column', sm: 'row' }, 
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            mt: 1,
+                            '& a': { transition: 'color 0.2s', '&:hover': { color: '#f5c826' } } 
+                        }}
+                    >
+                        <MUILink
+                            href="mailto:ontimeonewaydroptaxi@gmail.com"
+                            sx={{ textDecoration: "none", color: "white", mr: { xs: 0, sm: 1 }, mb: { xs: 0.5, sm: 0 } }} 
+                        >
+                            ontimeonewaydroptaxi@gmail.com
+                        </MUILink>
+                        
+                        <Typography 
+                            component="span" 
+                            variant="body2" 
+                            sx={{ 
+                                display: { xs: 'none', sm: 'inline' }, 
+                                color: 'white', 
+                                ml: 0, 
+                                mr: 0,
+                            }}
+                        >
+                            &nbsp;&amp;&nbsp;
+                        </Typography>
+                        
+                        <MUILink
+                            href="tel:+919663150767"
+                            sx={{ textDecoration: "none", color: "white", ml: { xs: 0, sm: 1 } }} 
+                        >
+                            +919663150767
+                        </MUILink>
+                    </Box>
 
                 </Box>
             </Box>
-            <Box sx={{ backgroundColor: '#E6F6F0', color: 'black', paddingBottom: '0.1px' }}>
+            
+            {/* ------------------- Footer Content Section ------------------- */}
+            <Box 
+                sx={{ 
+                    backgroundColor: '#E6F6F0', 
+                    color: 'black', 
+                    // Adjusted padding top for the whole section to reduce space after the black box
+                    pt: { xs: 2, md: 4 }, 
+                    paddingBottom: '20px',
+                    overflowX: 'hidden', 
+                    px: { xs: 2, md: 4 }, 
+                }}
+            >
                 <Box
                     sx={{
                         maxWidth: '1200px',
                         mx: 'auto',
                         display: 'flex',
                         flexWrap: 'wrap',
-                        justifyContent: 'space-between',
+                        justifyContent: 'space-between', 
+                        alignItems: 'flex-start', 
+                        textAlign: { xs: 'left', md: 'left' } 
                     }}
                 >
-                    <Box sx={{ display: "flex", p: "7px 30px", paddingRight: "60px" }}>
-                        <img src={carLogo} alt="Aro Logo" style={{ height: 270 , marginLeft:"13%" }} />
+                    {/* 1. Logo Section (CENTERED) */}
+                    <Box
+                        sx={{
+                            flex: { xs: '1 1 100%', md: '0 0 300px' }, 
+                            // Reduced vertical padding (py) to minimize space after the logo
+                            py: { xs: 1, md: 3 }, 
+                            px: 0, 
+                            display: 'flex',
+                            // CHANGED: Center logo on all screens
+                            justifyContent: 'center', 
+                            alignItems: 'center',
+                            overflow: 'hidden', 
+                        }}
+                    >
+                        <Box sx={{ display: "flex", p: 0 }}>
+                            <img src={carLogo} alt="Aro Logo" style={{ height: 270 }} />
+                        </Box>
                     </Box>
-                    <Box sx={{ flex: '1 1 200px', mb: 3, p: "30px" }}>
+
+                    {/* 2. Get In Touch Section (Kept left aligned) */}
+                    <Box 
+                        sx={{ 
+                            flex: { xs: '1 1 100%', sm: '0 0 45%', md: '0 0 350px' }, 
+                            mb: 3, 
+                            // Adjust padding-top for mobile if needed, removed fixed left/right
+                            p: { xs: '10px 0', md: '30px 10px' }, 
+                            textAlign: 'left' 
+                        }}
+                    >
                         <Typography variant="h6" sx={{ borderBottom: '3px solid yellow', pb: 1, display: 'inline-block' }}>
                             Get In Touch
                         </Typography>
-                        <Typography variant="body2" sx={{ mt: 1 ,fontSize: "16px"  }}>
+
+                        <Typography variant="body2" sx={{ mt: 1 ,fontSize: "16px" }}>
                             <strong>Location</strong><br />
                             No.18, 1st floor, 2nd block, 3rd Street, Logos church road,
                             Prakruthi township, Babusapalya, Bangalore 560043
                         </Typography>
+
                         <Typography variant="body2" sx={{ mt: 2 ,fontSize: "16px"}}>
-                            <strong>Contact</strong><br />
-                            Phone: <MUILink href="tel:+919663150767" sx={{ color: 'black' }}>+919663150767</MUILink><br />
-                            Mail Us: <MUILink href="mailto:ontimeonewaydroptaxi@gmail.com" sx={{ color: 'black' }}>
-                                ontimeonewaydroptaxi@gmail.com
-                            </MUILink>
-                        </Typography>
-                        <Box sx={{ display: "flex", gap: 2, mt: 5 }}>
+    <strong>Contact</strong><br />
+    Phone: <MUILink href="tel:+919663150767" sx={{ color: 'black', textDecoration: "none" }}>+919663150767</MUILink><br />
+    Mail Us: <MUILink href="mailto:ontimeonewaydroptaxi@gmail.com" sx={{ color: 'black', textDecoration: "none" }}>
+        ontimeonewaydroptaxi@gmail.com
+    </MUILink>
+</Typography>
+
+                        <Box sx={{ display: "flex", gap: 2, mt: 5, justifyContent: 'flex-start' }}>
                             <MUILink href="https://www.facebook.com/share/1Bj7oxUEiH/?mibextid=wwXIfr" target="_blank" rel="noopener">
                                 <Facebook sx={{ fontSize: 28, color:"blue"}} />
                             </MUILink>
@@ -123,7 +197,18 @@ const Contact = () => {
                             </MUILink>
                         </Box>
                     </Box>
-                    <Box sx={{ flex: '1 1 200px', mb: 3, paddingTop: 5, paddingLeft: 5 }}>
+
+                    {/* 3. Company Navigation Links (Removed extra space/padding) */}
+                    <Box 
+                        sx={{ 
+                            flex: { xs: '1 1 100%', sm: '0 0 45%', md: '0 0 200px' }, 
+                            mb: 3, 
+                            // CHANGED: Removed paddingTop/paddingLeft that was causing the space on desktop
+                            // Use consistent responsive padding for content box
+                            p: { xs: '10px 0', md: '30px 0' },
+                            textAlign: 'left'
+                        }}
+                    >
                         <Typography variant="h6" sx={{ borderBottom: '3px solid yellow', pb: 1, display: 'inline-block' }}>
                             Company
                         </Typography>
@@ -143,6 +228,7 @@ const Contact = () => {
                             >
                                 Home
                             </MUILink>
+
                             <MUILink
                                 component={RouterLink}
                                 to="/tariff"
@@ -157,6 +243,7 @@ const Contact = () => {
                             >
                                 Tariff
                             </MUILink>
+
                             <MUILink
                                 component={RouterLink}
                                 to="/ContactInfoPage"
@@ -174,6 +261,7 @@ const Contact = () => {
                     </Box>
                 </Box>
             </Box>
+            
         </>
     );
 };

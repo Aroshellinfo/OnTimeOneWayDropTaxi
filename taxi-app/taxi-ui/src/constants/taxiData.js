@@ -1,5 +1,5 @@
 
-import sedan from "../assets/images/cars/sedancar.jpeg";
+import sedan from "../assets/images/cars/dizire4.jpg";
 import suv from "../assets/images/cars/SUV2.png";
 import innova from "../assets/images/cars/innovacar.jpeg";
 
@@ -9,7 +9,8 @@ const taxiData = [
     image: sedan,
     price: 14,
     details: [
-      "Round Trip - Rs. 13",
+      "One way - Rs.14 per km",
+      "Round Trip - Rs.13 per km",
       "Driver Allowance - Rs. 300",
       "One Way - Minimum 130 Km",
       "Round Trip - Minimum 250 Km",
@@ -20,7 +21,8 @@ const taxiData = [
     image: suv,
     price: 19,
     details: [
-      "Round Trip - Rs. 18",
+      "One way - Rs.19 per km",
+      "Round Trip - Rs. 18 per km",
       "Driver Allowance - Rs. 400",
       "One Way - Minimum 130 Km",
       "Round Trip - Minimum 250 Km",
@@ -31,7 +33,8 @@ const taxiData = [
     image: innova,
     price: 20,
     details: [
-      "Round Trip - Rs. 19",
+      "One way - Rs.20 per km",
+      "Round Trip - Rs. 19 per km",
       "Driver Allowance - Rs. 500",
       "One Way - Minimum 130 Km",
       "Round Trip - Minimum 250 Km",

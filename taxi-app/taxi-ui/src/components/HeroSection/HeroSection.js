@@ -25,7 +25,6 @@ export default function HeroSection({ scrollToBooking }) {
     justifyContent: "center",
     textAlign: "center",
     height: "38px",
-    // Set responsive width: 100px for mobile, 30% for desktop
     width: { xs: "100%", md: "30%" },
     whiteSpace: "nowrap",
     fontSize: { xs: "14px", sm: "16px" },
@@ -33,8 +32,6 @@ export default function HeroSection({ scrollToBooking }) {
 >
   {HERO_TEXT.HOT_OFFERS_TITLE}
 </Box>
-
-
         <Box
           sx={{
             backgroundColor: "#E6F6F0",

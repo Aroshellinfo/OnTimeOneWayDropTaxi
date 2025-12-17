@@ -10,13 +10,11 @@ import heroImage from "./taxi2.jpg"; // replace with your uploaded image
 
 function Address() {
   const navigate = useNavigate();
-
   const offers = [
     "Chennai to Pondicherry Rs. 2199/-",
     "Chennai to Bangalore Rs. 5599/-",
     "Chennai to Madurai Rs. 6499/-"
   ];
-
   return (
     <>
       <Box sx={{ display: "flex", alignItems: "center", fontWeight: "bold" }}>

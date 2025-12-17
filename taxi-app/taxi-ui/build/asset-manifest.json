@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fb59fe1a.css",
+    "main.js": "/static/js/main.341fcc2e.js",
+    "static/js/453.a7b9b82c.chunk.js": "/static/js/453.a7b9b82c.chunk.js",
+    "static/media/place3.jpg": "/static/media/place3.d1efa986d60440d18158.jpg",
+    "static/media/car17.png": "/static/media/car17.dcf2e0e2eb30fce378a5.png",
+    "static/media/droptaxi.png": "/static/media/droptaxi.731bd031cbbdb7b90423.png",
+    "static/media/img4.png": "/static/media/img4.e411fe1d19cbf05ad5aa.png",
+    "static/media/SUV2.png": "/static/media/SUV2.1305454f3deb7e91fccf.png",
+    "static/media/Coimbatore.jpg": "/static/media/Coimbatore.2105d1f7a0cdbb1e1c69.jpg",
+    "static/media/Chennai.jpg": "/static/media/Chennai.22d982dc9edaaf531015.jpg",
+    "static/media/Madurai.jpg": "/static/media/Madurai.32e1750096209f469943.jpg",
+    "static/media/Trichy.jpg": "/static/media/Trichy.be89a3ffc7b812827195.jpg",
+    "static/media/Bangalore.jpg": "/static/media/Bangalore.1151cc106f46e8e70c47.jpg",
+    "static/media/Pondicherry.jpg": "/static/media/Pondicherry.f4f315b349a90e6dea46.jpg",
+    "static/media/logo4.png": "/static/media/logo4.c8591bc019977aa8bab0.png",
+    "static/media/loading2.gif": "/static/media/loading2.50abdbbf39a4e2ce3804.gif",
+    "static/media/Etios3.jpg": "/static/media/Etios3.7514da5a125d703e4bb7.jpg",
+    "static/media/innovacar.jpeg": "/static/media/innovacar.02648cdfc3916881ae18.jpeg",
+    "static/media/SUV10.png": "/static/media/SUV10.b93d8d09b187786d5ffd.png",
+    "index.html": "/index.html",
+    "main.fb59fe1a.css.map": "/static/css/main.fb59fe1a.css.map",
+    "main.341fcc2e.js.map": "/static/js/main.341fcc2e.js.map",
+    "453.a7b9b82c.chunk.js.map": "/static/js/453.a7b9b82c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb59fe1a.css",
+    "static/js/main.341fcc2e.js"
+  ]
+}

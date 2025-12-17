@@ -11,9 +11,28 @@ import taxiImage from "../../assets/images/taxis/droptaxi.png";
 function ContactInfo() {
   return (
     <Box sx={{ p: 4, backgroundColor: "#fff5f5" }}>
-
-      <Grid container spacing={4} alignItems="center">
-        <Grid item xs={12} md={6}>
+      <Grid
+        container
+        spacing={4}
+        alignItems="center"
+        sx={{
+          flexDirection: { xs: "column", md: "row" }, 
+          textAlign: { xs: "center", md: "left" }     
+        }}
+      >
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{ order: { xs: 1, md: 2 }, display: "flex", justifyContent: "center" }}
+        >
+          <img
+            src={taxiImage}
+            alt="Taxi"
+            style={{ maxWidth: "100%", height: "auto", borderRadius: 10 }}
+          />
+        </Grid>
+        <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
           <Typography variant="h6" fontWeight="bold" gutterBottom>
             Affordable 24/7 taxi service anywhere in and around Tamilnadu,
             Kerala, Pondicherry and nearby States.
@@ -23,15 +42,22 @@ function ContactInfo() {
             fontWeight="bold"
             color="#d32f2f"
             gutterBottom
+            sx={{ fontSize: { xs: "24px", md: "32px" } }}
           >
             ONE WAY DROP TAXI @ RS.13/KM ONWARDS
           </Typography>
-
           <Typography variant="body1" gutterBottom>
             Need a ride? Just call or WhatsApp
           </Typography>
-
-          <Box sx={{ mt: 2, display: "flex", gap: 2 }}>
+          <Box
+            sx={{
+              mt: 2,
+              display: "flex",
+              justifyContent: { xs: "center", md: "flex-start" },
+              flexDirection: { xs: "column", sm: "row" },
+              gap: 2
+            }}
+          >
             <Button
               variant="contained"
               sx={{ backgroundColor: "#d32f2f" }}
@@ -39,7 +65,6 @@ function ContactInfo() {
             >
               Call Now
             </Button>
-
             <Button
               variant="outlined"
               sx={{ borderColor: "#d32f2f", color: "#d32f2f" }}
@@ -50,34 +75,20 @@ function ContactInfo() {
             </Button>
           </Box>
         </Grid>
-
-        <Grid item xs={12} md={6} display="flex" justifyContent="center">
-          <img
-            src={taxiImage}
-            alt="Taxi"
-            style={{ maxWidth: "100%", height: "auto" }}
-          />
-        </Grid>
       </Grid>
       <Grid
         container
         spacing={4}
         sx={{
           mt: 5,
-          alignItems: "stretch" 
+          flexDirection: { xs: "column", md: "row" },
         }}
       >
-        {/* CARD 1 */}
-
         <Grid item xs={12} md={4} sx={{ display: "flex" }}>
           <Card
             sx={{
               p: 3,
               flex: 1,
-              minHeight: 260,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
               borderRadius: 3,
               boxShadow: "0 4px 15px rgba(0,0,0,0.15)"
             }}
@@ -90,18 +101,11 @@ function ContactInfo() {
             </Typography>
           </Card>
         </Grid>
-
-        {/* CARD 2 */}
-
         <Grid item xs={12} md={4} sx={{ display: "flex" }}>
           <Card
             sx={{
               p: 3,
               flex: 1,
-              minHeight: 260,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
               borderRadius: 3,
               boxShadow: "0 4px 15px rgba(0,0,0,0.15)"
             }}
@@ -116,18 +120,11 @@ function ContactInfo() {
             </Typography>
           </Card>
         </Grid>
-
-        {/* CARD 3 */}
-        
         <Grid item xs={12} md={4} sx={{ display: "flex" }}>
           <Card
             sx={{
               p: 3,
               flex: 1,
-              minHeight: 240,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
               borderRadius: 3,
               boxShadow: "0 4px 15px rgba(0,0,0,0.15)"
             }}
@@ -146,5 +143,4 @@ function ContactInfo() {
     </Box>
   );
 }
-
 export default ContactInfo;

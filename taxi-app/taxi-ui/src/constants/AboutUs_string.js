@@ -3,7 +3,7 @@ export const ABOUT_US_STRINGS = {
   
   SECTION_TITLE: "About Us",
   MAIN_HEADING: "One Way Drop Taxi",
-  BODY_TEXT: `Welcome to One Time One Way Drop Taxi, your trusted taxi service for`,
+  BODY_TEXT: `Welcome to On Time One Way Drop Taxi, your trusted taxi service for`,
   BODY_TEXT0: `affordable and safe travel in Karnataka, Tamil Nadu, Bangalore, Pondicherry`,
   BODY_TEXT1: `and Kerala. Our taxi service is the most preferred taxi service in`,
   BODY_TEXT2: `South India. We have been serving our customers since 2016`,

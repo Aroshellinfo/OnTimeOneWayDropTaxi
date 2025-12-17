@@ -1,6 +1,6 @@
 
-import img from "../assets/images/Common/img.jpg";
-import img1 from "../assets/images/Common/img1.jpg";
+import img from "../assets/images/cars/kiacar.jpg";
+import img1 from "../assets/images/cars/Etios3.jpg";
 import img2 from "../assets/images/Common/img2.jpg";
 
 export const SERVICES_STRINGS = {
@@ -15,7 +15,7 @@ export const SERVICES_DATA = [
     img: img,
     title: "One Way Taxi",
     description:
-      "We provide you all vehicles like Indigo, Tavera, Innova, Tempo Traveller etc. with our quick & best service.",
+      "We provide you all vehicles like Innova, Etios, Kia carens, Xylo and Dizire, etc. with our quick & best service.",
   },
   {
     img: img1,

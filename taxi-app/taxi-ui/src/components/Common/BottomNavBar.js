@@ -15,8 +15,6 @@ const BottomNavBar = ({
   const [open, setOpen] = useState(false);
   const [showOnScroll, setShowOnScroll] = useState(false);
   const [permanentlyClosed, setPermanentlyClosed] = useState(false);
-
-  // Detect mobile screen
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const runSafe = (fn) => {
@@ -39,7 +37,6 @@ const BottomNavBar = ({
   useEffect(() => {
     const handleScroll = () => {
       if (permanentlyClosed) return;
-
       if (window.scrollY > 200) {
         setShowOnScroll(true);
         setOpen(true);
@@ -53,7 +50,6 @@ const BottomNavBar = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [permanentlyClosed]);
 
-  // ❌ Correct place to hide on mobile (after hooks)
   if (isMobile) return null;
 
   if (!showOnScroll || permanentlyClosed) return null;

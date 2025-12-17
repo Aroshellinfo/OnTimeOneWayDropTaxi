@@ -12,13 +12,11 @@ import { SERVICES_DATA } from "../../constants/Services_string";
 import { SERVICES_STRINGS } from "../../constants/Services_string";
 
 const Services = ({ scrollToBooking }) => {
-
   const handleBookNowClick = () => {
     if (scrollToBooking) scrollToBooking();
   };
-
   return (
-    <Box sx={{ background: '#ddeedeff', padding: { xs: '0px 20px', md: '90px' } }}>
+    <Box sx={{ background: '#ddeedeff', padding: { xs: '18px 20px', md: '90px' } }}>
       <Box sx={{ textAlign: 'center', mb: 6 }}>
         <Typography
           variant="subtitle1"
@@ -36,13 +34,10 @@ const Services = ({ scrollToBooking }) => {
         <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1 }}>
           {SERVICES_STRINGS.MAIN_TITLE}
         </Typography>
-
         <Typography variant="body1" sx={{ color: 'text.secondary' }}>
           {SERVICES_STRINGS.SUB_TITLE}
         </Typography>
       </Box>
-
-      {/* Cards */}
       <Grid container spacing={1.5} justifyContent="center">
         {SERVICES_DATA.map((service, index) => (
           <Grid item key={index} xs={12} sm={6} md={4}>
@@ -69,7 +64,6 @@ const Services = ({ scrollToBooking }) => {
                 alt={service.title}
                 sx={{ objectFit: 'cover' }}
               />
-
               <CardContent
                 sx={{
                   textAlign: "center",
@@ -80,7 +74,6 @@ const Services = ({ scrollToBooking }) => {
                   pb: 2
                 }}
               >
-
                 <Box sx={{ flexGrow: 1 }}>
                   <Typography variant="h5" sx={{ mb: 2 }}>
                     {service.title}
@@ -94,9 +87,6 @@ const Services = ({ scrollToBooking }) => {
                     {service.description}
                   </Typography>
                 </Box>
-
-
-
                 <Box sx={{ display: "flex", justifyContent: "center", mt: 2, mb: 2 }}>
                   <Button
                     onClick={handleBookNowClick}
@@ -120,10 +110,6 @@ const Services = ({ scrollToBooking }) => {
                     {SERVICES_STRINGS.BUTTON_TEXT}
                   </Button>
                 </Box>
-
-
-
-                
               </CardContent>
             </Card>
           </Grid>
@@ -132,5 +118,4 @@ const Services = ({ scrollToBooking }) => {
     </Box>
   );
 };
-
 export default Services;

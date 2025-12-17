@@ -23,7 +23,7 @@ const AboutUs = ({ scrollToBooking }) => {
         minHeight: "90vh",
         pt: { xs: 8, sm: 10, md: 12 },
         padding: { xs: 2, sm: 4 },
-        paddingBottom: { xs: 8, md: 12 },
+        paddingBottom: { xs: 4, md: 2 },
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -40,13 +40,11 @@ const AboutUs = ({ scrollToBooking }) => {
           gap: { md: 4 },
         }}
       >
-        {/* Text Section */}
         <Box
           sx={{
             maxWidth: "600px",
             textAlign: "left",
-            // Shift text more to the right on desktop
-            ml: { xs: 0, md: 24 }, // Increased margin-left from left
+            ml: { xs: 0, md: 24 },
             mb: { xs: 4, md: 0 },
             mt: 4,
           }}
@@ -76,30 +74,29 @@ const AboutUs = ({ scrollToBooking }) => {
             {ABOUT_US_STRINGS.MAIN_HEADING}
           </Typography>
 
-          <Typography
+                <Typography
             variant="body1"
             sx={{
-              fontSize: 15,
+              fontSize: { xs: "1rem", sm: "1rem", md: "1rem" }, 
               color: "#333",
               mb: 3,
-              whiteSpace: "pre-line",
               lineHeight: 1.7,
+              textAlign: "left", 
+              whiteSpace: "pre-line", 
             }}
           >
             {ABOUT_US_STRINGS.BODY_TEXT}
-            <br />
-            {ABOUT_US_STRINGS.BODY_TEXT0}
-            <br />
-            {ABOUT_US_STRINGS.BODY_TEXT1}
-            <br />
-            {ABOUT_US_STRINGS.BODY_TEXT2}
-            <br />
-            {ABOUT_US_STRINGS.BODY_TEXT3}
-            <br />
-            {ABOUT_US_STRINGS.BODY_TEXT4}
-            <br />
-          </Typography>
 
+            {ABOUT_US_STRINGS.BODY_TEXT0}
+
+            {ABOUT_US_STRINGS.BODY_TEXT1}
+
+            {ABOUT_US_STRINGS.BODY_TEXT2}
+
+            {ABOUT_US_STRINGS.BODY_TEXT3}
+
+            {ABOUT_US_STRINGS.BODY_TEXT4}
+          </Typography>
           <Button
             onClick={handleBookNow}
             sx={{
@@ -122,8 +119,6 @@ const AboutUs = ({ scrollToBooking }) => {
             {ABOUT_US_STRINGS.BOOK_NOW_BUTTON}
           </Button>
         </Box>
-
-        {/* Image Section */}
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <Box
             component="img"

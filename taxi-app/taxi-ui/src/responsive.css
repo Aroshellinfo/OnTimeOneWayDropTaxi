@@ -1,36 +1,23 @@
-/* src/styles/responsive.css
-   Only media queries and small helpers. Imported once globally. */
-
-/* Tablet / small desktop */
+/* 
 @media (max-width: 1024px) {
   .container { padding: 0 20px; }
   .hero { padding-left: 40px; padding-right: 40px; }
   .nav-items { gap: 12px; }
 }
-
-/* Mobile phones */
 @media (max-width: 768px) {
   .container { padding: 0 12px; }
   .hero {
     padding: 24px 12px;
-    grid-template-columns: 1fr !important; /* force stacked layout */
+    grid-template-columns: 1fr !important; 
   }
-
-  /* header helpers */
-  .topbar-left { display: none; }         /* hide non-essential text in top bar */
+  .topbar-left { display: none; }        
   .logo { padding-left: 12px !important; }
-  .nav-items { display: none !important; } /* hide desktop menu */
-  .hamburger { display: inline-flex !important; } /* show burger icon if present */
-
-  /* Book Now button helper (keeps padding smaller on mobile) */
+  .nav-items { display: none !important; } 
+  .hamburger { display: inline-flex !important; } 
   .book-now-btn { padding: 10px 16px !important; font-size: 14px !important; }
-
-  /* Services/cards stack */
   .services-grid { grid-template-columns: repeat(1, 1fr) !important; }
 }
-
-/* Extra small phones */
 @media (max-width: 480px) {
   .hero h1, .hero h2 { font-size: 18px !important; }
   .book-now-btn { padding: 10px 12px !important; font-size: 13px !important; }
-}
+} */
